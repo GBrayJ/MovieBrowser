@@ -7,7 +7,7 @@
         </router-link>
       </div>
       <div id="header" class="flex">
-        <img alt="movie poster" class="w-45 rounded-md border-2 border-gray-300 h-1/4" :src="movie.imageurl"/>
+        <img alt="movie poster" class="w-45 rounded-md border-2 border-gray-300 " height="200px" :src="movie.imageurl"/>
         <div id="body" class="flex flex-col ml-5">
           <h4 id="name" class="text-xl font-semibold mb-2">{{ movie.moviename }}</h4>
           <p id="rating" class="text-gray-800 mt-2">Rating: {{ movie.rating }}/10</p>
