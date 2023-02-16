@@ -7,8 +7,10 @@
         </router-link>
       </div>
       <div id="header" class="flex">
+        <div class="h-1/4">
         <img alt="movie poster" class="w-45 rounded-md border-2 border-gray-300 " height="200px" :src="movie.imageurl"/>
-        <div id="body" class="flex flex-col ml-5">
+        </div>
+          <div id="body" class="flex flex-col ml-5">
           <h4 id="name" class="text-xl font-semibold mb-2">{{ movie.moviename }}</h4>
           <p id="rating" class="text-gray-800 mt-2">Rating: {{ movie.rating }}/10</p>
           <p id="genre" class="text-gray-800 mt-2">{{ movie.genre }}</p>
