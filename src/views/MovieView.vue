@@ -14,7 +14,7 @@ export default {
   methods: {
     async getMovie() {
       const response = await axios.get(
-          `http://localhost:3000/data/movie/` + this.$route.params.id
+          `https://moviebrowserbackend.onrender.com/data/movie/` + this.$route.params.id
       ).then((response) => {
         console.log(response)
         this.movie = response.data
