@@ -4,7 +4,17 @@ import './style.css'
 import App from './App.vue'
 import routes from "./router/router.js";
 import InstantSearch from 'vue-instantsearch/vue3/es';
+import * as firebase from "firebase/app";
+import "firebase/analytics";
+import {env} from "process";
 
+try {
+firebase.initializeApp(env.VITE_FIREBASE_CONFIG);
+analytics();
+
+} catch (e) {
+console.log(e);
+}
 
 const router = createRouter({
     history: createWebHashHistory(),
