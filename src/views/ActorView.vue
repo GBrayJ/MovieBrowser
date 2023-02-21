@@ -20,9 +20,10 @@ export default {
           return;
         }
         for (let i = 0; i < response.data.movies.length; i++) {
-          this.getMovie(response.data.movies[i]).then((response) => {
+          this.getMovie(response.data.movies[i]).then((responsetwo) => {
             console.log(this.movies)
-            this.movies.push(response)
+            responsetwo.objectID = response.data.movies[i],
+            this.movies.push(responsetwo)
           })
         }
       })

@@ -1,10 +1,10 @@
 <template>
-  <div class="md:h-fit flex place-items-center flex-col bg-white shadow-md border border-gray-200 rounded-lg max-w-sm dark:bg-gray-800 dark:border-gray-700">
+  <div class="md:h-fit flex place-items-center flex-col bg-white shadow-md border border-gray-200 rounded-lg max-w-sm">
     <router-link :to="'/movies/' + id">
     <img class="rounded-t-lg sm:h-14 md:h-96 lg:max-2xl:h-96" :src="image" alt="Movie Thumbnail">
     </router-link>
     <div class="p-5">
-        <h5 class="text-gray-900 font-bold text-2xl tracking-tight mb-2 dark:text-white">{{ title }}</h5>
+        <h5 class="text-gray-900 font-bold text-2xl tracking-tight mb-2">{{ title }}</h5>
       <p class="font-normal text-gray-700 mb-3 dark:text-gray-400">
       {{ description }}
       </p>

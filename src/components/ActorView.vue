@@ -34,6 +34,9 @@ export default {
   props: {
     actor: Object,
     movies: Array
+  },
+  mounted() {
+    console.log(this.movies)
   }
 }
 </script>

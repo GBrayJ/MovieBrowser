@@ -44,6 +44,7 @@ export default {
   mounted() {
     setTimeout(() => {
       this.getRatingBar();
+      console.log(this.actors)
     }, 200);
   },
   methods: {

@@ -2,6 +2,7 @@
   <div class="flex justify-center flex-row">
     <select @change="printText" v-model="selOption"
             class="ml-2 mr-2 mt-2 bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-5/6 p-2.5">
+      <option value="" disabled selected>Select an option</option>
       <option value="movie">Movie</option>
       <option value="actor">Actor</option>
     </select>
@@ -45,6 +46,7 @@ export default {
     },
     submitForm(movie) {
       console.log("submit form")
+      console.log(movie.actors)
       let options = {
         method: 'POST',
         url: 'https://moviebrowserbackend.onrender.com/data/movie/new',
@@ -61,6 +63,25 @@ export default {
         }
       };
       axios.request(options).then(function (response) {
+        for (let i = 0; i < movie.actors.length; i++) {
+          axios.get(`https://moviebrowserbackend.onrender.com/actors/${movie.actors[i]}`).then((responsetwo) => {
+            let newdata = responsetwo.data.movies
+            newdata.push(response.data.objectID)
+            let options = {
+              method: 'PUT',
+              url: `https://moviebrowserbackend.onrender.com/actors/${movie.actors[i]}`,
+              headers: {'Content-Type': 'application/json'},
+              data: {
+                movies: newdata
+              }
+            };
+            axios.request(options).then(function (response) {
+              console.log(response.data);
+            }).catch(function (error) {
+              console.error(error);
+            });
+          })
+        }
         if (response.data.objectID) {
           window.location = "/#/movies/" + response.data.objectID
         } else {
@@ -130,8 +151,7 @@ export default {
 </script>
 
 <style>
-.v-enter-active,
-.v-leave-active {
+.v-enter-active {
   transition: opacity 0.5s ease;
 }
 
