@@ -1,5 +1,6 @@
 import { defineConfig } from 'vite'
 import vue from '@vitejs/plugin-vue'
+<<<<<<< HEAD
 import vuetify from 'vite-plugin-vuetify'
 
 const path = require('path')
@@ -32,4 +33,10 @@ export default defineConfig({
     ]
   },
   */
+=======
+
+// https://vitejs.dev/config/
+export default defineConfig({
+  plugins: [vue()]
+>>>>>>> 3603344d6f34a2d2d23e7499847610780649d7ef
 })

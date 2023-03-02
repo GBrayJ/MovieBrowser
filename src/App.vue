@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <template>
   <v-app>
     <v-main>
@@ -16,3 +17,18 @@ export default {
   }),
 }
 </script>
+=======
+<script setup>
+
+import NavBar from "./components/NavBar.vue";
+</script>
+
+<template>
+  <nav-bar/>
+  <router-view/>
+</template>
+
+<style scoped>
+
+</style>
+>>>>>>> 3603344d6f34a2d2d23e7499847610780649d7ef
